@@ -54,7 +54,7 @@ def get_average_age_for_season(data, season)
   data.each do |season_num, season_data|
     if season_num == season 
       season_data.each do |contestant_info|
-        season_ages << contestant_info["age"].to_f.ceil
+        season_ages << contestant_info["age"].to_f
       end 
       season_ages_length = season_ages.length
       season_ages.each do |age|
@@ -63,4 +63,5 @@ def get_average_age_for_season(data, season)
     end 
   end 
   average_age /= season_ages_length
+  average_age.ceil
 end
